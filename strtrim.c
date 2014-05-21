@@ -1,3 +1,5 @@
+#include <string.h>
+
 /*
  *函数名称：ltrim 
  *函数功能：除去字符串开头的空白符。 
@@ -5,12 +7,14 @@
  *输出参数：s:输出字符串。 
  *返回值：空 
  */
-static void ltrim(char *s)  
+static void _ltrim(char *s)  
 {  
-    char *p;  
-    p = s;  
-    while(*p == ' ' || *p == '\t'){*p++;}  
-    strcpy(s,p);  
+	char 	*p = s;
+
+	while(*p == ' ' || *p == '\t'){
+		p++;
+	}  
+    	memmove(s,p, strlen(p) + 1);  
 }  
   
 /*
@@ -20,12 +24,18 @@ static void ltrim(char *s)
  *输出参数：s:输出字符串。 
  *返回值：空 
  */  
-static void rtrim(char *s)  
+static void _rtrim(char *s)  
 {  
-    int i;  
-    i = strlen(s)-1;  
-    while((s[i] == ' ' || s[i] == '\t') && i >= 0){i--;};  
-    s[i+1] = '\0';  
+	char	*p;
+
+	p = s + strlen(s) - 1;
+	while(1){
+		if((*p == ' ' || *p == '\t') && *(p + 1) == '\0'){
+			*p-- = '\0';
+		}else {
+			break;
+		}
+	}
 }  
   
 /*
@@ -35,8 +45,8 @@ static void rtrim(char *s)
  *输出参数：s:输出字符串。 
  *返回值：空 
  */  
-void trim(char *s)  
+void strtrim(char *s)  
 {  
-    ltrim(s);  
-    rtrim(s);  
+	_ltrim(s);  
+	_rtrim(s);  
 }  
