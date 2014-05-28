@@ -25,7 +25,6 @@ struct clist {
 #define CLIST_STRUCT_INIT(list) {0, {&(list).root, &(list).root}}
 extern struct clist *clist_init(void);
 
-
 extern struct element *clist_push_front(struct clist *list,
 				void *value, int vlen);
 extern struct element *clist_push_back(struct clist *list,

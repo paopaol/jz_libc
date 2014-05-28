@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "clist.h"
+#include "jz_string.h"
 
 
 //eg:
@@ -21,6 +22,11 @@ int main(void)
 	int		i;
 	struct element	*e, *tmp;
 	int		err;
+
+
+
+
+
 
 	for(i = 0; i < 5; i++){
 		g = new_goods();
