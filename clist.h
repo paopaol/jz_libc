@@ -1,11 +1,12 @@
+/*
+ *jinzhao
+ */
+
+
 #ifndef __CLIST_H__
 #define __CLIST_H__
 #include <stdio.h>
 #include <stdlib.h>
-/*通用双环链表:
- *链表节点的内存管理由链表操作函数显式调用管理，
- *每个节点里存放的数据区，内存的管理由用户自行管理
- */
 
 
 struct element {
